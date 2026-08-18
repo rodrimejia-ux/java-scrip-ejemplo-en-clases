@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call of Duty: Modern Warfare - Operativo</title>
+    <!-- Tipografías militares / modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./visual.css">
+</head>
+<body>
+
+    <main class="form-wrapper">
+        <section class="form-card">
+            <!-- Contenedor con distribución de imágenes: una a la izquierda y otra a la derecha -->
+            <div class="images-container">
+                <div class="avatar-container">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.ftE8s8RroOCEsTvOk3eNFwHaED?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Avatar Operativo" class="player-avatar">
+                </div>
+                <div class="insignia-container">
+                    <img src="https://ultimasnoticias.com.ve/wp-content/uploads/2026/07/Call-of-Duty-Modern-Warfare-4-anuncia-fechas-de-su-Acceso-Anticipado-y-Beta-Abierta-PRroGamers.life_.png" alt="Insignia Task Force Táctica" class="tactical-insignia">
+                </div>
+            </div>
+
+            <!-- Títulos con efectos de text-shadow y paleta MW -->
+            <div class="header-titles">
+                <span class="game-tag">CALL OF DUTY <span class="highlight-cyan">//</span> MODERN WARFARE <span class="highlight-green">REMAKE</span></span>
+                <h1 class="form-title">REGISTRO DE <span class="title-gradient">OPERATIVO</span></h1>
+            </div>
+            
+            <form action="#" method="POST" class="gaming-form">
+                <!-- Nombre completo -->
+                <div class="form-group">
+                    <label for="fullname">NOMBRE EN CLAVE</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Ej: Price // TF-141" required>
+                </div>
+
+                <!-- Correo -->
+                <div class="form-group">
+                    <label for="email">CANAL DE COMUNICACIÓN</label>
+                    <input type="email" id="email" name="email" placeholder="taskforce141@mw.mil" required>
+                </div>
+                
+                <!-- Contraseña -->
+                <div class="form-group">
+                    <label for="password">CÓDIGO DE ACCESO SEGURO</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <!-- Select Múltiple -->
+                <div class="form-group">
+                    <label for="platforms">TEATRO DE OPERACIONES <span class="label-accent">(Plataformas)</span></label>
+                    <select id="platforms" name="platforms" multiple required>
+                        <option value="pc">PC Tactical Rig</option>
+                        <option value="ps5">PlayStation 5</option>
+                        <option value="xbox">Xbox Series X|S</option>
+                        <option value="crossplay">Crossplay Global</option>
+                    </select>
+                    <small class="hint">Mantén presionado Ctrl / Cmd para seleccionar varios.</small>
+                </div>
+
+                <!-- Radio Buttons -->
+                <div class="form-group">
+                    <label>ESPECIALIZACIÓN DE <span class="highlight-cyan">COMBATE</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="class" value="assault" required>
+                            <span>Asalto Urbano</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="class" value="recon">
+                            <span>Vigilancia y Recon</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="class" value="specops">
+                            <span>Task Force 141</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Checkboxes -->
+                <div class="form-group">
+                    <label>PROTOCOLO DE <span class="highlight-green">SEGURIDAD</span></label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="intel" value="yes">
+                            <span>Recibir transmisiones cifradas prioritarias</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" value="accepted" required>
+                            <span>Aceptar las Reglas de Enfrentamiento (ROE)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Mensaje -->
+                <div class="form-group">
+                    <label for="message">INFORME DE MISIÓN</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Escribe las coordenadas o reporte..." required></textarea>
+                </div>
+
+                <!-- Botón -->
+                <button type="submit" class="btn-submit">INICIAR MISIÓN TÁCTICA</button>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

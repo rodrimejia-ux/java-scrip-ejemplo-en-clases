@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Validación Esmeralda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #022c22; /* Fondo verde muy oscuro y profundo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Panel principal con estructura independiente */
+        .panel-registro {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 3px solid #0d9488;
+        }
+
+        .panel-header {
+            background: linear-gradient(135deg, #0f766e, #047857);
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .panel-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .cuerpo-form {
+            padding: 30px;
+        }
+
+        /* --- SELECTORES CSS SOLICITADOS --- */
+        .cuerpo-form p {
+            margin: 14px 0;
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        /* 1. Primer párrafo (:first-child) */
+        .cuerpo-form p:first-child {
+            background-color: #f0fdf4;
+            color: #0f766e;
+            font-weight: bold;
+            border-left: 4px solid #0d9488;
+        }
+
+        /* 2. Párrafos impares */
+        .cuerpo-form p:nth-child(odd) {
+            color: #115e59;
+        }
+
+        /* 3. Párrafos pares */
+        .cuerpo-form p:nth-child(even) {
+            color: #475569;
+            background-color: #f8fafc;
+        }
+
+        /* 4. Selector :only-child (Único párrafo dentro de su contenedor) */
+        .aviso-unico {
+            background: #fef3c7;
+            border: 1px dashed #d97706;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .aviso-unico p:only-child {
+            color: #b45309;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* 5. Último párrafo (:last-child) en color morado */
+        .cuerpo-form p:last-child {
+            color: #7c3aed;
+            font-weight: bold;
+            text-align: center;
+            background: #f5f3ff;
+            border: 1px solid #ddd6fe;
+        }
+
+        /* Diseño en cuadrícula (Grid) para inputs */
+        .grid-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .grupo-campo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .grupo-campo.ancho-total {
+            grid-column: span 2;
+        }
+
+        label {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #334155;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            padding: 12px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #0d9488;
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+        }
+
+        /* Checkbox con diseño personalizado en tonos morados */
+        .seccion-check {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+            background: #faf5ff;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e9d5ff;
+        }
+
+        input[type="checkbox"] {
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            background: #ffffff;
+            border: 2px solid #c084fc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        input[type="checkbox"]:checked {
+            background: #7c3aed;
+            border-color: #6d28d9;
+        }
+
+        .btn-accion {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #0d9488, #059669);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-accion:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(13, 148, 136, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            .grid-inputs { grid-template-columns: 1fr; }
+            .grupo-campo.ancho-total { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="panel-registro">
+        <div class="panel-header">
+            <h1>Portal de Validación</h1>
+            <p>Sistema estructurado con diseño independiente</p>
+        </div>
+
+        <form class="cuerpo-form" id="formularioUnico">
+            <!-- 1. Párrafo inicial (:first-child) -->
+            <p>Bienvenido al registro de nuevos usuarios del sistema.</p>
+
+            <div class="grid-inputs">
+                <div class="grupo-campo">
+                    <label>Nombre:</label>
+                    <input type="text" placeholder="Tu nombre">
+                </div>
+                <div class="grupo-campo">
+                    <label>Apellido:</label>
+                    <input type="text" placeholder="Tu apellido">
+                </div>
+                <div class="grupo-campo ancho-total">
+                    <label>Correo Electrónico:</label>
+                    <input type="email" placeholder="correo@dominio.com">
+                </div>
+            </div>
+
+            <!-- Contenedor que utiliza exclusivamente :only-child -->
+            <div class="aviso-unico">
+                <p>Este es un aviso exclusivo de seguridad (elemento único).</p>
+            </div>
+
+            <div class="grupo-campo">
+                <label>Contraseña Maestra:</label>
+                <input type="password" placeholder="••••••••">
+            </div>
+
+            <div class="seccion-check">
+                <input type="checkbox" id="acepto">
+                <label for="acepto" style="margin:0; cursor:pointer; color:#581c87;">Confirmo la veracidad de los datos aportados</label>
+            </div>
+
+            <!-- 2. Párrafo final (:last-child) en color morado -->
+            <p>Proceso finalizado correctamente.</p>
+
+            <button type="submit" class="btn-accion">Ejecutar Registro</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('formularioUnico').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Formulario procesado correctamente.");
+        });
+    </script>
+</body>
+</html>

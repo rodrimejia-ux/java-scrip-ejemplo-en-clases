@@ -1,0 +1,49 @@
+### 1. Obtener todos los usuarios
+GET http://localhost:3000/usuarios
+
+### 2. Obtener un usuario por ID (existente)
+GET http://localhost:3000/usuarios/1
+
+### 3. Obtener un usuario por ID (no existe)
+GET http://localhost:3000/usuarios/99
+
+### 4. Crear un usuario válido
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+  "nombre": "Pedro",
+  "email": "pedro@example.com"
+}
+
+### 5. Crear un usuario SIN nombre (validación fallida)
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+  "email": "pedro@example.com"
+}
+
+### 6. Crear un usuario con nombre muy corto (validación fallida)
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+  "nombre": "A",
+  "email": "pedro@example.com"
+}
+
+### 7. Crear un usuario con email sin @ (validación fallida)
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+  "nombre": "Pedro",
+  "email": "pedroexample.com"
+}
+
+### 8. Eliminar un usuario por ID
+DELETE http://localhost:3000/usuarios/3
+
+### 9. Eliminar un usuario por ID (no existe)
+DELETE http://localhost:3000/usuarios/99

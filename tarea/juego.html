@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Hijos Pares e Impares</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="visual.css">
+</head>
+<body>
+
+    <main class="contenedor-principal">
+        <h1>Juego: Selección de Hijos Pares e Impares</h1>
+        <p class="subtitulo">Selecciona qué hijos deseas destacar o agrega nuevos elementos</p>
+
+        <div class="panel-botones">
+            <button id="btn-par" class="btn btn-par">Elegir Pares</button>
+            <button id="btn-impar" class="btn btn-impar">Elegir Impares</button>
+            <button id="btn-agregar" class="btn btn-agregar">+ Agregar Hijo</button>
+        </div>
+
+        <!-- Contenedor Padre con elementos hijos dinámicos -->
+        <div id="contenedor-padre" class="contenedor-padre">
+            <div class="hijo">Primer hijo (Posición 1)</div>
+            <div class="hijo">Segundo hijo (Posición 2)</div>
+            <div class="hijo">Tercer hijo (Posición 3)</div>
+            <div class="hijo">Cuarto hijo (Posición 4)</div>
+        </div>
+    </main>
+
+    <!-- Vinculación del archivo JavaScript externo -->
+    <script src="funcionamiento.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galaxia Ultra-Colorida & Interactiva</title>
+  <link rel="stylesheet" href="./atardecer.css">
+</head>
+<body>
+
+  <!-- Contenedor del espacio con efecto Parallax/Interacción -->
+  <div class="space-viewport" id="viewport">
+    
+    <!-- Núcleo Ultra-Colorido y Nebulosas Dinámicas -->
+    <div class="galaxy-core"></div>
+    <div class="nebula-cloud cloud-magenta"></div>
+    <div class="nebula-cloud cloud-cyan"></div>
+    <div class="nebula-cloud cloud-gold"></div>
+
+    <!-- Capas Masivas de Estrellas Coloridas (Movimiento Parallax) -->
+    <div class="star-layer stars-bg"></div>
+    <div class="star-layer stars-mid"></div>
+    <div class="star-layer stars-fg"></div>
+
+    <!-- Destellos Gigantes Intermitentes -->
+    <div class="giant-star star-1"></div>
+    <div class="giant-star star-2"></div>
+    <div class="giant-star star-3"></div>
+    <div class="giant-star star-4"></div>
+
+    <!-- Estrellas Fugaces Neón -->
+    <div class="shooting-star shooter-1"></div>
+    <div class="shooting-star shooter-2"></div>
+    <div class="shooting-star shooter-3"></div>
+
+    <!-- Elemento del Cursor Interactivo CSS / JS Ultra-Liviano -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Tarjeta de Contenido Glassmorphism -->
+    <main class="hero-card">
+      <span class="badge">Exploración Espacial Ultra HD</span>
+      <h1>UNIVERSO NEÓN</h1>
+      <p>Mueve el cursor para interactuar con el campo estelar y sentir la profundidad 3D de la galaxia.</p>
+      <div class="actions">
+        <button class="btn btn-primary">Iniciar Navegación</button>
+        <button class="btn btn-secondary">Configurar Vista</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // JS ultraligero para trasladar la posición del ratón a variables CSS
+    const viewport = document.getElementById('viewport');
+    const cursor = document.getElementById('cursorGlow');
+
+    window.addEventListener('mousemove', (e) => {
+      const { clientX: x, clientY: y } = e;
+      
+      // Luz seguidora del puntero
+      cursor.style.left = `${x}px`;
+      cursor.style.top = `${y}px`;
+
+      // Calcular traslación parallax según el centro de la pantalla
+      const moveX = (x - window.innerWidth / 2) / 25;
+      const moveY = (y - window.innerHeight / 2) / 25;
+
+      viewport.style.setProperty('--mouse-x', `${moveX}px`);
+      viewport.style.setProperty('--mouse-y', `${moveY}px`);
+    });
+  </script>
+</body>
+</html>

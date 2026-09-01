@@ -1,1 +1,1 @@
-const datos = "informacion de novedades";
+const datos = "informacion de novedades cambiada";

@@ -1,0 +1,78 @@
+/* Diseños generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    margin: 0;
+    padding: 20px;
+}
+
+.contenedor-principal {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #38bdf8;
+    margin-top: 0;
+}
+
+.subtitulo {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Panel de Botones */
+.panel-botones {
+    margin: 20px 0;
+}
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-par { background-color: #0284c7; color: white; }
+.btn-impar { background-color: #d97706; color: white; }
+.btn-agregar { background-color: #16a34a; color: white; }
+
+/* Tarjetas de Hijos */
+.contenedor-padre {
+    margin-top: 15px;
+}
+
+.hijo {
+    background-color: #334155;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Clases dinámicas aplicadas desde JS */
+.hijo.destacado-par {
+    background-color: #0369a1;
+    border-left-color: #38bdf8;
+    font-weight: bold;
+}
+
+.hijo.destacado-impar {
+    background-color: #b45309;
+    border-left-color: #fbbf24;
+    font-weight: bold;
+}

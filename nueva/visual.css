@@ -1,0 +1,372 @@
+:root {
+    --bg-color: #050806;
+    --card-bg: #0b120e;
+    --mw-green: #00ff66;
+    --mw-cyan: #00e5ff;
+    --mw-glow: 0 0 25px rgba(0, 255, 102, 0.25);
+    --input-bg: #070d0a;
+    --text-color: #e2e8f0;
+    --label-color: #8fa398;
+    --border-color: #16261d;
+    --shadow-inner: inset 0 4px 10px rgba(0, 0, 0, 0.95), inset 0 -2px 4px rgba(255, 255, 255, 0.02);
+    --shadow-inner-hover: inset 0 4px 12px rgba(0, 0, 0, 0.95), inset 0 0 12px rgba(0, 255, 102, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(0, 255, 102, 0.03) 0%, transparent 65%),
+        linear-gradient(rgba(11, 18, 14, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 18, 14, 0.3) 1px, transparent 1px);
+    background-size: 100% 100%, 24px 24px, 24px 24px;
+}
+
+.form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjeta principal */
+.form-card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    max-width: 520px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), var(--mw-glow);
+    position: relative;
+}
+
+.form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--mw-green);
+    box-shadow: 0 0 12px var(--mw-green);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* Contenedor de las dos imágenes separado a los extremos */
+.images-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* Avatar principal (Izquierda) */
+.player-avatar {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--mw-green);
+    box-shadow: 0 0 16px rgba(0, 255, 102, 0.35);
+    filter: drop-shadow(0 6px 14px rgba(0, 255, 102, 0.45));
+    transform: translate(0px, 0px) scale(1);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player-avatar:hover {
+    transform: translate(0px, -4px) scale(1.06);
+    box-shadow: 0 0 28px rgba(0, 255, 102, 0.65);
+    filter: drop-shadow(0 10px 20px rgba(0, 255, 102, 0.75));
+}
+
+/* Segunda imagen / Insignia Táctica (Derecha) */
+.tactical-insignia {
+    width: 95px;
+    height: 95px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    border: 2px solid var(--mw-cyan);
+    
+    /* Box Shadow combinado con efecto INSET */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 
+                0 0 15px rgba(0, 229, 255, 0.3), 
+                inset 0 0 18px rgba(0, 229, 255, 0.7), 
+                inset 0 0 6px rgba(0, 0, 0, 0.95);
+                
+    transform: translate(0px, 0px) scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tactical-insignia:hover {
+    transform: translate(0px, -4px) scale(1.06);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9), 
+                0 0 25px rgba(0, 229, 255, 0.5), 
+                inset 0 0 24px rgba(0, 229, 255, 0.9), 
+                inset 0 0 8px rgba(0, 0, 0, 1);
+}
+
+/* --- EFECTOS DE TEXTO (TEXT-SHADOW Y COLORES) --- */
+
+.header-titles {
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.game-tag {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--mw-green);
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.6), 0 0 20px rgba(0, 255, 102, 0.2);
+}
+
+.highlight-cyan {
+    color: var(--mw-cyan);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+}
+
+.highlight-green {
+    color: var(--mw-green);
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.8);
+}
+
+.form-title {
+    font-family: 'Rajdhani', sans-serif;
+    color: #ffffff;
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 255, 102, 0.3);
+}
+
+.title-gradient {
+    background: linear-gradient(90deg, #00ff66 0%, #00e5ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(0, 255, 102, 0.4));
+}
+
+.label-accent {
+    color: var(--mw-cyan);
+    font-weight: normal;
+    text-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--label-color);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.hint {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.72rem;
+    color: #5d7568;
+}
+
+/* Inputs, Textarea y Selects */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    outline: none;
+    background-color: var(--input-bg);
+    color: var(--mw-green);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    transform: translate(0px, 0px);
+    box-shadow: var(--shadow-inner);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.form-group select[multiple] {
+    height: 110px;
+    padding: 0.5rem;
+}
+
+.form-group select[multiple] option {
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+}
+
+.form-group select[multiple] option:checked {
+    background: rgba(0, 255, 102, 0.2);
+    color: var(--mw-green);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #3b5245;
+}
+
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group select:hover {
+    border-color: var(--mw-green);
+    transform: translate(0px, -2px) scale(1.01);
+    box-shadow: var(--shadow-inner-hover), 0 0 12px rgba(0, 255, 102, 0.2);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--mw-green);
+    transform: translate(0px, -2px) scale(1.01);
+    box-shadow: var(--shadow-inner-hover), 0 0 16px rgba(0, 255, 102, 0.3);
+}
+
+/* Grupos de Radio y Checkbox */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background-color: var(--input-bg);
+    padding: 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    box-shadow: var(--shadow-inner);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.radio-group:hover,
+.checkbox-group:hover {
+    border-color: var(--mw-green);
+    transform: translate(0px, -2px) scale(1.01);
+    box-shadow: var(--shadow-inner-hover), 0 0 12px rgba(0, 255, 102, 0.15);
+}
+
+.radio-label,
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    user-select: none;
+}
+
+/* Estilos de Radiobuttons y Checkboxes */
+.radio-label input[type="radio"],
+.checkbox-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: #050806;
+    border: 2px solid var(--border-color);
+    outline: none;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    transition: all 0.2s ease-in-out;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.9);
+}
+
+.radio-label input[type="radio"] {
+    border-radius: 50%;
+}
+
+.checkbox-label input[type="checkbox"] {
+    border-radius: 3px;
+}
+
+.radio-label input[type="radio"]:checked,
+.checkbox-label input[type="checkbox"]:checked {
+    border-color: var(--mw-green);
+    background-color: rgba(0, 255, 102, 0.18);
+    box-shadow: 0 0 8px var(--mw-green), inset 0 0 4px var(--mw-green);
+}
+
+.radio-label input[type="radio"]::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--mw-green);
+}
+
+.radio-label input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.checkbox-label input[type="checkbox"]::before {
+    content: "✔";
+    font-size: 10px;
+    color: var(--mw-green);
+    transform: scale(0);
+    text-shadow: 0 0 6px var(--mw-green);
+    transition: 120ms transform ease-in-out;
+}
+
+.checkbox-label input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+/* Botón de envío */
+.btn-submit {
+    width: 100%;
+    padding: 0.95rem;
+    background: linear-gradient(135deg, #00ff66 0%, #008833 100%);
+    color: #050806;
+    border: none;
+    border-radius: 0.4rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transform: translate(0px, 0px);
+    box-shadow: 0 4px 18px rgba(0, 255, 102, 0.35);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #33ff88 0%, #00aa44 100%);
+    transform: translate(0px, -3px) scale(1.02);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4), 0 0 28px rgba(0, 255, 102, 0.6);
+}
+
+.btn-submit:active {
+    transform: translate(0px, 0px) scale(0.98);
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.6);
+}

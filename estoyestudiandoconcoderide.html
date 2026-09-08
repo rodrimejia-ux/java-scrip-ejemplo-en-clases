@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Glass</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <h1>Registro de Usuario</h1>
+
+    <form class="form-container">
+        <div class="field-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre...">
+        </div>
+
+        <div class="glass-container">
+            <label for="lastname" class="glass-label">Apellido:</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Tu apellido..." class="glass-input">
+        </div>
+
+        <!-- Botón que ejecuta la función coderider -->
+        <button type="button" onclick="coderider()" class="glass-btn">Ejecutar CodeRider</button>
+    </form>
+
+    <!-- Vinculación del script JavaScript -->
+    <script src="./js/scrip.js"></script>
+</body>
+</html>

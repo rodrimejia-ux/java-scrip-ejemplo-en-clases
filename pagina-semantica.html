@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura Semántica HTML5 - Guía Cultural de Popayán</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- CABECERA PRINCIPAL (<header>): Contiene el título del sitio y branding -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>Guía Cultural de Popayán</h1>
+            </div>
+            <p class="tagline">Ejemplo práctico de Maquetación Semántica en HTML5 y CSS3</p>
+        </div>
+
+        <!-- NAVEGACIÓN PRINCIPAL (<nav>): Menú con enlaces del sitio -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#gastronomia">Gastronomía</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL (<main>): Único por página, representa el foco central -->
+    <main class="main-content">
+
+        <!-- SECCIÓN DE ARTÍCULOS (<section>): Agrupa artículos o contenido relacionado -->
+        <section class="articles-section">
+            <h2>Artículos Destacados</h2>
+
+            <!-- ARTÍCULO 1 (<article>): Contenido autónomo e independiente -->
+            <article class="card-article">
+                <header class="article-header">
+                    <span class="category-badge">Patrimonio</span>
+                    <h3>El Centro Histórico y la Arquitectura Colonial</h3>
+                    <p class="meta-info">Publicado el <time datetime="2026-09-24">24 de Septiembre, 2026</time> por Rodrigo Mejía</p>
+                </header>
+
+                <div class="article-body">
+                    <p>Popayán, conocida como la Ciudad Blanca de Colombia, destaca por su arquitectura colonial admirablemente conservada. Sus calles empedradas y fachadas encaladas representan uno de los centros históricos más imponentes de América Latina.</p>
+                    <p>Entre sus monumentos más representativos se encuentran el Puente del Humilladero, la Torre del Reloj y el Parque Caldas, sitios emblemáticos que atraen a visitantes e historiadores de todo el mundo.</p>
+                </div>
+
+                <footer class="article-footer">
+                    <span class="tags">Etiquetas: #Popayán #Arquitectura #Turismo</span>
+                    <a href="#" class="read-more">Leer artículo completo &rarr;</a>
+                </footer>
+            </article>
+
+            <!-- ARTÍCULO 2 (<article>): Segundo bloque con sentido propio -->
+            <article class="card-article">
+                <header class="article-header">
+                    <span class="category-badge gastronomia">Gastronomía</span>
+                    <h3>Tradición Culinaria: Empanadas de Pipián y Aplanchados</h3>
+                    <p class="meta-info">Publicado el <time datetime="2026-09-20">20 de Septiembre, 2026</time> por Rodrigo Mejía</p>
+                </header>
+
+                <div class="article-body">
+                    <p>Reconocida por la UNESCO como Ciudad Gastronómica, Popayán cuenta con una oferta culinaria única que fusiona tradiciones indígenas, españolas y africanas.</p>
+                    <p>El pipián, un guiso elaborado a base de papa colorada y maní, es la base esencial de sus famosas empanadas y tamales. Asimismo, los reposteros locales deleitan con sus tradicionales aplanchados y hojaldres.</p>
+                </div>
+
+                <footer class="article-footer">
+                    <span class="tags">Etiquetas: #Gastronomía #UNESCO #Pipián</span>
+                    <a href="#" class="read-more">Leer artículo completo &rarr;</a>
+                </footer>
+            </article>
+
+        </section>
+
+        <!-- BARRA LATERAL (<aside>): Contenido secundario o relacionado -->
+        <aside class="sidebar">
+
+            <div class="widget">
+                <h3>Sobre el Proyecto</h3>
+                <p>Esta página web fue desarrollada utilizando <strong>HTML5 Semántico</strong> y <strong>CSS3</strong> como demostración de buenas prácticas de desarrollo web, accesibilidad y estructura limpia para SEO.</p>
+            </div>
+
+            <div class="widget">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="aside-links">
+                    <li><a href="#">Museos de la Ciudad</a></li>
+                    <li><a href="#">Rutas Ecológicas en Puracé</a></li>
+                    <li><a href="#">Artesanías Caucanas</a></li>
+                    <li><a href="#">Calendario de Eventos</a></li>
+                </ul>
+            </div>
+
+            <div class="widget highlight-widget">
+                <h3>Consejo Semántico</h3>
+                <p>El uso adecuado de <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code> y <code>&lt;aside&gt;</code> permite a los motores de búsqueda como Google indexar el sitio de manera óptima.</p>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- PIE DE PÁGINA (<footer>): Derechos de autor, contacto e información legal -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Guía Cultural de Popayán. Todos los derechos reservados.</p>
+            <p>Proyecto de desarrollo web - Código fuente disponible en <a href="https://github.com/rodrimejia-ux" target="_blank" rel="noopener">GitHub (rodrimejia-ux)</a>.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
